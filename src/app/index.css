@@ -95,22 +95,6 @@
     @apply border-border;
   }
 
-  #root {
-    @apply bg-background text-foreground max-w-lg p-2 text-center;
-  }
-
-  .logo {
-    @apply h-[6em] p-1 will-change-[filter] transition-[filter] duration-300;
-  }
-
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-  }
-
-  .logo.react:hover {
-    filter: drop-shadow(0 0 2em #61dafbaa);
-  }
-
   .card {
     @apply p-8
   }
