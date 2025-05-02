@@ -1,13 +1,15 @@
-import { useState } from "react";
+'use client'
+
+import { Button } from "@/components/ui/button";
 import { Slider } from "@/components/ui/slider";
 import { Switch } from "@/components/ui/switch";
-import { Button } from "@/components/ui/button";
-import { useToast } from "@/components/ui/use-toast";
-import { generatePassword, calculateStrength } from "@/lib/password";
+import { useToast } from "@/hooks/use-toast";
+import { calculateStrength, generatePassword } from "@/lib/password";
 import { Copy, RefreshCw } from "lucide-react";
+import { useState } from "react";
 
 const PasswordGenerator = () => {
-  const { toast } = useToast();
+  const { toast } = useToast()
   const [password, setPassword] = useState("");
   const [length, setLength] = useState([12]);
   const [options, setOptions] = useState({
@@ -25,8 +27,8 @@ const PasswordGenerator = () => {
   const handleCopy = () => {
     navigator.clipboard.writeText(password);
     toast({
-      title: "Copied!",
-      description: "Password copied to clipboard",
+      title: "Copy",
+      description: "Password copied to clipboard"
     });
   };
 
@@ -41,7 +43,7 @@ const PasswordGenerator = () => {
   return (
     <div className="w-full max-w-md p-6 backdrop-blur-xl bg-white/10 rounded-xl shadow-xl animate-fade-in">
       <h2 className="text-2xl font-bold text-white mb-6">Password Generator</h2>
-      
+
       <div className="bg-white/20 p-4 rounded-lg mb-6">
         <div className="flex items-center gap-2">
           <code className="font-mono text-xl text-white flex-1 overflow-x-auto">
@@ -57,7 +59,7 @@ const PasswordGenerator = () => {
             <Copy className="h-4 w-4 text-white" />
           </Button>
         </div>
-        
+
         <div className="mt-2 h-2 rounded-full bg-white/20 overflow-hidden">
           <div
             className={`h-full ${getStrengthColor()} transition-all duration-500`}
