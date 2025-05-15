@@ -7,7 +7,7 @@ Follow these steps:
 git clone https://github.com/thiiz/password-generator.git
 
 # Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+cd password-generator
 
 # Step 3: Install the necessary dependencies.
 npm i
